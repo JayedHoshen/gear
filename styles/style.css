@@ -43,7 +43,77 @@ img {
   padding: 10px 24px;
   background-color: var(--btnColor);
 }
+
 /* ----------- main css --------- */
+/* navbar styles */
+nav {
+  margin-top: 87px;
+  margin-bottom: 40px;
+}
+
+nav .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .nav-container h2 {
+  color: #3a3a3a;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-container ul {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+}
+
+.nav-container ul li a {
+  color: #3a3a3a;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* hero styles */
+.hero-container {
+  display: flex;
+  gap: 130px;
+  align-items: center;
+}
+
+.hero-container .left-content h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 70px;
+  color: #3a3a3a;
+  margin-bottom: 16px;
+}
+
+.hero-container .left-content p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin-bottom: 16px;
+}
+
+.hero-container .left-content > button {
+  border-radius: 20px;
+}
+
+.hero-container .right-content {
+  height: 475px;
+  width: 50%;
+  position: relative;
+}
+
+.hero-container .right-content > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* logos styles */
 #logos {
   margin: 100px 0px;
@@ -55,6 +125,63 @@ img {
   gap: 60px;
   justify-content: center;
   align-content: center;
+}
+
+/* popular styles */
+#popular h2 {
+  color: #3a3a3a;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 70px;
+  text-align: center;
+}
+
+#popular .popular-content {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.popular-content .popular-card {
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 40px 0 rgba(0, 0, 0, 0.15);
+}
+
+.popular-card h4 {
+  color: #18191f;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  margin: 16px 0 6px;
+}
+
+.popular-card .dolar-p {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.popular-card .common-p {
+  color: #787885;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.popular-card .common-p .star {
+  margin-top: 5px;
+  font-size: 25px;
+  color: rgba(255, 166, 0, 0.897);
+}
+
+#popular .container > p {
+  margin-top: 50px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(224, 44, 110, 0.87);
 }
 
 /* featured styles */
@@ -148,8 +275,51 @@ footer ul li a {
 }
 /* --------------- responsive mobile device ------------ */
 @media screen and (max-width: 576px) {
-  /* logos responsive */
-  #logos {
+  nav {
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+
+  nav .nav-container {
+    flex-direction: column;
+  }
+
+  nav .nav-container h2 {
+    color: #3a3a3a;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .nav-container ul {
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-container {
+    gap: 14px;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-container .left-content h1 {
+    font-size: 28px;
+    line-height: normal;
+  }
+
+  .hero-container .left-content p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .hero-container .right-content {
+    width: 90%;
+  }
+
+  #logos,
+  #featured {
     margin: 50px 0px;
   }
 
@@ -157,10 +327,11 @@ footer ul li a {
     gap: 30px;
   }
 
-  /* featured responsive */
-  #featured {
-    margin: 50px 0px;
+  #popular .popular-content {
+    gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
   }
+
   #featured .featured-container {
     text-align: center;
     flex-direction: column-reverse;
@@ -175,16 +346,12 @@ footer ul li a {
     margin-bottom: 30px;
   }
 
-  /* footer responsive */
-  footer h3 {
+  footer h3,
+  footer ul li a {
     font-size: 1rem;
   }
 
   footer p {
     font-size: 0.75rem;
-  }
-
-  footer ul li a {
-    font-size: 1rem;
   }
 }
